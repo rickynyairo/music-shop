@@ -18,7 +18,7 @@ class ArtistController {
    * @param {object} res express response object
    * @param {object} next next middleware
    * @returns {json} json object with status and artist data
-   * @memberof artistController
+   * @memberof ArtistController
    */
   static async getAllArtists(_req, res, next) {
     try {
@@ -41,7 +41,7 @@ class ArtistController {
           .status(400)
           .json({ error: { message: "The email provided already exists" } });
       }
-      return res.status(200).send({ artist });
+      return res.status(201).send({ artist });
     } catch (err) {
       return next(err);
     }

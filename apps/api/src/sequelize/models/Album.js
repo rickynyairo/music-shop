@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     {
-      tableName: "album",
+      tableName: "albums",
       underscored: true
     }
   );
