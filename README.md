@@ -32,7 +32,7 @@ $ yarn lerna-bootstrap
 To run Sequelize commands easily on your terminal please ensure that you have the [`Sequelize-cli`](https://www.npmjs.com/package/sequelize-cli) package installed globally by running the following command:
 
 ```
-npm install -g sequelize-cli
+yarn add global sequelize-cli
 ```
 
 You will also need postgres along with its command line tools (part of normal install).
