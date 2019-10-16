@@ -3,25 +3,24 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
-      .createTable("artists", {
-        artist_id: {
+      .createTable("shopping_cart", {
+        item_id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true
         },
-        name: {
+        cart_id: {
           type: Sequelize.TEXT,
           allowNull: false
         },
-        email: {
-          type: Sequelize.TEXT,
-          allowNull: false,
-          unique: true
+        album_id: {
+          type: Sequelize.INTEGER,
+          allowNull: false
         }
       })
-      .then(() => queryInterface.addIndex("artists", ["artist_id"]));
+      .then(() => queryInterface.addIndex("shopping_cart", ["item_id"]));
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("artists");
+    return queryInterface.dropTable("shopping_cart");
   }
 };

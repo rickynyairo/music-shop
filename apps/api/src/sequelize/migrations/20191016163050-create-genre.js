@@ -3,25 +3,20 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
-      .createTable("artists", {
-        artist_id: {
+      .createTable("genres", {
+        genre_id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true
         },
-        name: {
+        titme: {
           type: Sequelize.TEXT,
           allowNull: false
-        },
-        email: {
-          type: Sequelize.TEXT,
-          allowNull: false,
-          unique: true
         }
       })
-      .then(() => queryInterface.addIndex("artists", ["artist_id"]));
+      .then(() => queryInterface.addIndex("genres", ["genre_id"]));
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("artists");
+    return queryInterface.dropTable("genres");
   }
 };

@@ -7,8 +7,8 @@ export const routes = [
     controller: ArtistController.getAllArtists
   },
   {
-    method: "get",
-    path: "path",
-    controller: (req, res) => {}
+    method: "post",
+    path: "/api/artists",
+    controller: ArtistController.createArtist
   }
 ];
