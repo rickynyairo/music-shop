@@ -9,7 +9,7 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true
         },
-        titme: {
+        title: {
           type: Sequelize.TEXT,
           allowNull: false
         },
