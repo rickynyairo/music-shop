@@ -12,6 +12,10 @@ An artist can upload music to the application
 An artist can add a song to an album
 A user can buy an album through a shopping cart
 
+## Endpoints
+
+Postman Collection: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5e64dd7617ad8b74648f)
+
 ### Installation
 
 This API requires you have [Node.js](https://nodejs.org/) v10+. Check your node version by typing `node -v`
@@ -21,7 +25,6 @@ $ git clone `https://github.com/rickynyairo/music-shop.git`
 $ touch .env
 $ cp .env.example .env
 $ yarn lerna-bootstrap
-$ run `yarn start and navigate to `http://localhost:3000/`
 ```
 
 ### Database config
@@ -44,9 +47,15 @@ sequelize db:migrate
 
 Once completed, the database is ready to go.
 
-### Endpoints
+### App Execute
 
-Postman Collection: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5e64dd7617ad8b74648f)
+```
+$ yarn start
+```
+
+This starts both the backend and the frontend application.
+Now visit <http://localhost:3000>
+This also starts the api server on port `3001`.
 
 ## License
 
