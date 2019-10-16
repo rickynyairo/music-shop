@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       album_id: {
-        type: DataTypes.TEXT,
+        type: DataTypes.INTEGER,
         allowNull: true
       },
       genre_id: {
