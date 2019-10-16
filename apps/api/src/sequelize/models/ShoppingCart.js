@@ -9,17 +9,12 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true
       },
       cart_id: {
-        type: DataTypes.STRING(32),
+        type: DataTypes.TEXT,
         allowNull: false
       },
       album_id: {
         type: DataTypes.INTEGER,
         allowNull: false
-      },
-      created_on: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: DataTypes.NOW
       }
     },
     {

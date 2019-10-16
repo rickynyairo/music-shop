@@ -3,8 +3,8 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface
-      .createTable("artists", {
-        artist_id: {
+      .createTable("songs", {
+        song_id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true
@@ -13,10 +13,22 @@ module.exports = {
           type: Sequelize.TEXT,
           allowNull: false
         },
-        email: {
-          type: Sequelize.TEXT,
-          allowNull: false,
-          unique: true
+        artist_id: {
+          type: Sequelize.INTEGER,
+          allowNull: false
+        },
+        album_id: {
+          type: Sequelize.INTEGER,
+          allowNull: true
+        },
+        genre_id: {
+          type: Sequelize.INTEGER,
+          allowNull: true
+        },
+        price: {
+          type: Sequelize.DECIMAL(10, 2),
+          allowNull: true,
+          defaultValue: 0
         },
         created_at: {
           type: Sequelize.DATE,
@@ -29,9 +41,9 @@ module.exports = {
           defaultValue: Sequelize.literal("NOW()")
         }
       })
-      .then(() => queryInterface.addIndex("artists", ["artist_id"]));
+      .then(() => queryInterface.addIndex("songs", ["song_id"]));
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("artists");
+    return queryInterface.dropTable("songs");
   }
 };
