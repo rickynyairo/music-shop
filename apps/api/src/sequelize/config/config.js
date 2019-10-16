@@ -6,7 +6,7 @@ const databaseUrl = process.env.DATABASE_URL;
 let connUrl;
 let dbProperties;
 
-if (databaseUrl) {
+try {
   connUrl = url.parse(databaseUrl);
   dbProperties = {
     username: connUrl.auth.split(":")[0],
@@ -15,20 +15,22 @@ if (databaseUrl) {
     database: connUrl.pathname.slice(1),
     port: parseInt(connUrl.port)
   };
+} catch (error) {
+  console.log("connection error>>>>>n\n\n", error);
+  throw error;
 }
 
 const config = {
   databaseUrl,
   dialect,
-  logging: !isProduction ? log => log : false,
+  logging: console.log,
   dialectOptions: {
     multipleStatements: true,
     require: true
   },
   ssl: false,
-  operatorsAliases: false,
   isProduction: false,
-  environment,
+  environment: process.env.NODE_ENV,
   ...dbProperties
 };
 

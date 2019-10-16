@@ -14,7 +14,7 @@ A user can buy an album through a shopping cart
 
 ## Endpoints
 
-Postman Collection: [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5e64dd7617ad8b74648f)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5e64dd7617ad8b74648f)
 
 ### Installation
 
