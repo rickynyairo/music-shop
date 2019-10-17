@@ -53,7 +53,7 @@ export const getSongs = async () => {
   const { data } = await api.get("/songs");
   return {
     type: GET_SONGS,
-    payload: data
+    payload: data.songs
   };
 };
 
@@ -61,6 +61,6 @@ export const getAlbums = async () => {
   const { data } = await api.get("/albums");
   return {
     type: GET_ALBUMS,
-    payload: data
+    payload: data.albums
   };
 };
