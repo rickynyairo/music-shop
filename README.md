@@ -42,7 +42,6 @@ To set up the Database run the following commands in your terminal (after follow
 
 ```
 createdb music_shop
-sequelize db:migrate
 ```
 
 Once completed, the database is ready to go.
@@ -50,8 +49,12 @@ Once completed, the database is ready to go.
 ### App Execute
 
 ```
+$ yarn bootstrap
 $ yarn start
 ```
+
+`yarn bootstrap` installs all application dependencies
+`yarn start` does database migrations and seeds the database
 
 This starts both the backend and the frontend application.
 Now visit <http://localhost:3000>
