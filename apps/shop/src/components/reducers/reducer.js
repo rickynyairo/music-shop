@@ -15,8 +15,9 @@ const initState = {
 export default (state = initState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      let addedItem = state.albums.find(album => album.id === action.id);
-      addedItem.quantity = 1;
+      let addedItem = state.albums.find(
+        album => album.album_id === action.payload[0].album_id
+      );
       return {
         ...state,
         addedItems: [...state.addedItems, addedItem],
