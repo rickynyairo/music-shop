@@ -9,8 +9,9 @@ import {
 } from "./actions/actions";
 
 class Home extends Component {
-  handleClick = id => {
-    this.props.addToCart(id);
+  handleClick = album_id => {
+    const { cart_id } = this.props;
+    this.props.addToCart({ cart_id, album_id });
   };
   componentDidMount = async () => {
     const { getCartId, getAlbums, getSongs } = this.props;
@@ -18,18 +19,38 @@ class Home extends Component {
     await getAlbums();
     await getSongs();
   };
+
   render() {
-    let itemList = this.props.songs.map(item => {
+    let songList = this.props.songs.map(song => {
       return (
-        <div className="card" key={item.id}>
+        <div className="card" key={song.song_id}>
           <div className="card-image">
-            <img src={item.img} alt={item.title} />
-            <span className="card-title">{item.title}</span>
+            <span
+              to="/"
+              className="btn-floating halfway-fab waves-effect waves-light red"
+            >
+              <i className="material-icons">add</i>
+            </span>
+          </div>
+
+          <div className="card-content">
+            <p>{song.name}</p>
+            <p>
+              <b>Price: {song.price}$</b>
+            </p>
+          </div>
+        </div>
+      );
+    });
+    let albumList = this.props.albums.map(album => {
+      return (
+        <div className="card" key={album.album_id}>
+          <div className="card-image">
             <span
               to="/"
               className="btn-floating halfway-fab waves-effect waves-light red"
               onClick={() => {
-                this.handleClick(item.id);
+                this.handleClick(album.album_id);
               }}
             >
               <i className="material-icons">add</i>
@@ -37,9 +58,9 @@ class Home extends Component {
           </div>
 
           <div className="card-content">
-            <p>{item.name}</p>
+            <p>{album.title}</p>
             <p>
-              <b>Price: {item.price}$</b>
+              <b>Price: {album.price}$</b>
             </p>
           </div>
         </div>
@@ -48,17 +69,19 @@ class Home extends Component {
 
     return (
       <div className="container">
-        <h3 className="center">Our items</h3>
-        <div className="box">{itemList}</div>
+        <h3 className="center">Songs</h3>
+        <div className="box">{songList}</div>
+        <h3 className="center">Albums</h3>
+        <div className="box">{albumList}</div>
       </div>
     );
   }
 }
 const mapStateToProps = state => {
-  console.log(state.albums);
   return {
     songs: state.songs,
-    albums: state.albums
+    albums: state.albums,
+    cart_id: state.cart_id
   };
 };
 

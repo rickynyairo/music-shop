@@ -38,12 +38,12 @@ export default (state = initState, action) => {
     case GET_ALBUMS:
       return {
         ...state,
-        songs: action.payload
+        albums: action.payload
       };
     case GET_SONGS:
       return {
         ...state,
-        albums: action.payload
+        songs: action.payload
       };
     default:
       return state;
