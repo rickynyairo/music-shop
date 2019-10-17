@@ -6,6 +6,7 @@ import { applyRoutes, applyMiddleware } from "./utils";
 import errorHandlers from "./middleware/errors";
 import log from "fancy-log";
 import http from "http";
+import cors from "cors";
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-
+app.use(cors());
 applyRoutes(routes, app);
 applyMiddleware(errorHandlers, app);
 
