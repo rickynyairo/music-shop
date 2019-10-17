@@ -25,7 +25,6 @@ export default (state = initState, action) => {
     case REMOVE_ITEM:
       let itemToRemove = state.addedItems.find(album => action.id === album.id);
       let new_items = state.addedItems.filter(album => action.id !== album.id);
-      console.log(itemToRemove);
       return {
         ...state,
         addedItems: new_items,
@@ -39,12 +38,12 @@ export default (state = initState, action) => {
     case GET_ALBUMS:
       return {
         ...state,
-        albums: action.payload
+        songs: action.payload
       };
     case GET_SONGS:
       return {
         ...state,
-        songs: action.payload
+        albums: action.payload
       };
     default:
       return state;

@@ -55,11 +55,13 @@ class Home extends Component {
   }
 }
 const mapStateToProps = state => {
+  console.log(state.albums);
   return {
     songs: state.songs,
     albums: state.albums
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
     addToCart: async id => {
