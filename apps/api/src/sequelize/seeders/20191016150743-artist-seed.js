@@ -10,7 +10,7 @@ module.exports = {
         email: "john_doe@gmail.com"
       },
       defaults: {
-        id: 1,
+        artist_id: 1,
         name: "John Doe",
         email: "john_doe@gmail.com"
       }
