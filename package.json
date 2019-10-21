@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "start": "yarn migrate:db && yarn seed:db && $(npm bin)/lerna run start --parallel",
-    "bootstrap": "$(npm bin)/lerna bootstrap",
+    "bootstrap": "$(yarn bin)/lerna bootstrap",
     "migrate:db": "sequelize db:migrate",
     "seed:db": "sequelize db:seed"
   },
