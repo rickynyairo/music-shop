@@ -36,7 +36,7 @@ class Home extends Component {
           <div className="card-content">
             <p>{song.name}</p>
             <p>
-              <b>Price: {song.price}$</b>
+              <b>Price: KSh. {song.price}</b>
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ class Home extends Component {
           <div className="card-content">
             <p>{album.title}</p>
             <p>
-              <b>Price: {album.price}$</b>
+              <b>Price: KSh. {album.price}</b>
             </p>
           </div>
         </div>
@@ -69,10 +69,10 @@ class Home extends Component {
 
     return (
       <div className="container">
-        <h3 className="center">Songs</h3>
-        <div className="box">{songList}</div>
         <h3 className="center">Albums</h3>
         <div className="box">{albumList}</div>
+        <h3 className="center">Songs</h3>
+        <div className="box">{songList}</div>
       </div>
     );
   }

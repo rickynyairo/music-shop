@@ -16,7 +16,7 @@ try {
     port: parseInt(connUrl.port)
   };
 } catch (error) {
-  console.log("connection error>>>>>n\n\n", error);
+  console.log("connection error>>>>>\n\n", error);
   throw error;
 }
 

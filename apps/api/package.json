@@ -7,9 +7,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start:prod": "node dist/index.js",
+    "start:node": "node dist/index.js",
     "build": "mkdir dist && babel src --out-dir dist",
     "start": "DEBUG=log nodemon --exec babel-node src/index.js",
+    "start:prod": "pm2 start ecosystem.config.js --env production",
     "lint": "eslint 'src/**/*.js' --fix"
   },
   "dependencies": {
